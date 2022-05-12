@@ -51,6 +51,10 @@ playground.xcworkspace
 
 .build/
 
+**/.DS_Store
+ShopApp.xcodeproj/xcuserdata/developer.xcuserdatad/xcdebugger/
+
+
 # CocoaPods
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
