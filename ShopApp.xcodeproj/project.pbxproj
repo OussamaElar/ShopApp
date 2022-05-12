@@ -17,6 +17,9 @@
 		8BFD78A8282C5BE800E56870 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD78A7282C5BE800E56870 /* WebService.swift */; };
 		8BFD78AB282C6EBB00E56870 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD78A9282C6EBB00E56870 /* ProductCell.swift */; };
 		8BFD78AC282C6EBB00E56870 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFD78AA282C6EBB00E56870 /* ProductCell.xib */; };
+		8BFD78AE282D7D0D00E56870 /* SavedProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD78AD282D7D0D00E56870 /* SavedProductsViewController.swift */; };
+		8BFD78B1282D7D3400E56870 /* SavedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD78AF282D7D3400E56870 /* SavedProductCell.swift */; };
+		8BFD78B2282D7D3400E56870 /* SavedProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFD78B0282D7D3400E56870 /* SavedProductCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		8BFD78A7282C5BE800E56870 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		8BFD78A9282C6EBB00E56870 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		8BFD78AA282C6EBB00E56870 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		8BFD78AD282D7D0D00E56870 /* SavedProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedProductsViewController.swift; sourceTree = "<group>"; };
+		8BFD78AF282D7D3400E56870 /* SavedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedProductCell.swift; sourceTree = "<group>"; };
+		8BFD78B0282D7D3400E56870 /* SavedProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedProductCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				8BBC40B1282C31C200A99389 /* ViewController.swift */,
+				8BFD78AD282D7D0D00E56870 /* SavedProductsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -96,6 +103,8 @@
 				8BBC40B3282C31C200A99389 /* Main.storyboard */,
 				8BFD78A9282C6EBB00E56870 /* ProductCell.swift */,
 				8BFD78AA282C6EBB00E56870 /* ProductCell.xib */,
+				8BFD78AF282D7D3400E56870 /* SavedProductCell.swift */,
+				8BFD78B0282D7D3400E56870 /* SavedProductCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +188,7 @@
 			files = (
 				8BBC40BA282C31C200A99389 /* LaunchScreen.storyboard in Resources */,
 				8BFD78AC282C6EBB00E56870 /* ProductCell.xib in Resources */,
+				8BFD78B2282D7D3400E56870 /* SavedProductCell.xib in Resources */,
 				8BBC40B7282C31C200A99389 /* Assets.xcassets in Resources */,
 				8BBC40B5282C31C200A99389 /* Main.storyboard in Resources */,
 			);
@@ -194,7 +204,9 @@
 				8BBC40B2282C31C200A99389 /* ViewController.swift in Sources */,
 				8BBC40AE282C31C200A99389 /* AppDelegate.swift in Sources */,
 				8BBC40B0282C31C200A99389 /* SceneDelegate.swift in Sources */,
+				8BFD78AE282D7D0D00E56870 /* SavedProductsViewController.swift in Sources */,
 				8BFD78AB282C6EBB00E56870 /* ProductCell.swift in Sources */,
+				8BFD78B1282D7D3400E56870 /* SavedProductCell.swift in Sources */,
 				8BFD78A8282C5BE800E56870 /* WebService.swift in Sources */,
 				8BBC40C6282C369C00A99389 /* Model.swift in Sources */,
 			);
