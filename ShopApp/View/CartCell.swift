@@ -7,42 +7,31 @@
 
 import UIKit
 
-class CartCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
+class CartCell: UITableViewCell {
     
-    var items: [Product] = []
+    var pc = ProductCell()
     
-    @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
-    }
-    
-    @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") else {
-            return UITableViewCell()
-        }
-        let item = items[indexPath.row]
-        cell.textLabel?.text = "\(item)"
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapping cell \(indexPath.section) \(indexPath.row)")
-    }
-
-    @IBOutlet weak var tableView: UITableView!
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var cartImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
     }
     
+    func configure(product: Product) {
+        productPrice.text = "$\(product.price ?? "")"
+        productName.text = product.name
+        self.loadImage(imageUrl: product.imageUrl!)
+    }
+    
+    func loadImage(imageUrl: String) {
+        WebService.shared.getImage(imageUrl: imageUrl) { image in
+            DispatchQueue.main.async {
+                self.cartImageView.image = UIImage(data: image!)
+            }
+        }
+    }
     
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {
