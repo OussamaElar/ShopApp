@@ -9,12 +9,17 @@ import UIKit
 
 class CartViewController: UIViewController, UITableViewDelegate {
     
-    var vc = ViewController()
-
     @IBOutlet weak var cartTableView: UITableView!
+    var cartProductArr: [Product] = [] {
+            didSet {
+                DispatchQueue.main.async {
+                    self.cartTableView.reloadData()
+                }
+            }
+         }
     
     func cartTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        vc.productCartArr.count
+        cartProductArr.count
     }
     
     
@@ -22,7 +27,7 @@ class CartViewController: UIViewController, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell") as? CartCell else {
             return UITableViewCell()
         }
-        let product = vc.productCartArr[indexPath.row]
+        let product = cartProductArr[indexPath.row]
         cell.configure(product: product)
         return cell
     }
