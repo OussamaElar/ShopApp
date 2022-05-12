@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CartViewController: UIViewController, UITableViewDelegate {
+class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var cartTableView: UITableView!
     var cartProductArr: [Product] = [] {
@@ -34,6 +34,8 @@ class CartViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         cartTableView.delegate = self
+        cartTableView.dataSource = self
+        cartTableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
 
         // Do any additional setup after loading the view.
     }
