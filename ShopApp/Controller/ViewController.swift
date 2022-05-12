@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var cartButton: UIBarButtonItem!
+    var productCartArr: [Product] = []
     var products: [Product] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -65,16 +67,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row selected")
-        self.showAlert()
+        let product = products[indexPath.row]
+        self.showAlert(product: product)
         tableView.deselectRow(at: indexPath, animated: true)
+        print(productCartArr.count)
     }
     
     
 }
 extension ViewController {
-    func showAlert() {
+    func showAlert(product: Product) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let actionAdd = UIAlertAction(title: "Add To Cart", style: .default, handler: nil)
+        let actionAdd = UIAlertAction(title: "Add To Cart", style: .default) { action in
+            self.passingData(product: product)
+        }
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(actionAdd)
         alert.addAction(actionCancel)
@@ -82,6 +88,10 @@ extension ViewController {
             self.present(alert, animated: true, completion: nil)
             print("alert show")
         }
+    }
+    
+    func passingData(product: Product) {
+        productCartArr.append(product)
     }
 }
 
