@@ -51,7 +51,7 @@ playground.xcworkspace
 
 .build/
 
-.DS_Store
+**/.DS_Store
 ShopApp.xcodeproj/xcuserdata/developer.xcuserdatad/xcdebugger/
 
 
