@@ -49,7 +49,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         cartTableView.delegate = self
         cartTableView.dataSource = self
-        cartTableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
+       
 
         // Do any additional setup after loading the view.
     }
