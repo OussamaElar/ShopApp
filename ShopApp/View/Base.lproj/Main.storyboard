@@ -76,16 +76,55 @@
         <!--Cart-->
         <scene sceneID="fFg-Fz-3lN">
             <objects>
-                <viewController id="7EK-Ka-HIi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CART" id="7EK-Ka-HIi" customClass="CartViewController" customModule="ShopApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FJb-TU-HKh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0h5-BK-lpe">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dhB-Hd-akK">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhB-Hd-akK" id="VPW-Ll-s0W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Caw-Fw-TmE">
+                                                    <rect key="frame" x="36" y="11" width="303" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Caw-Fw-TmE" firstAttribute="leading" secondItem="VPW-Ll-s0W" secondAttribute="leadingMargin" constant="20" id="C9u-sr-s0L"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Caw-Fw-TmE" secondAttribute="trailing" constant="20" id="Jzz-7t-S6S"/>
+                                                <constraint firstItem="Caw-Fw-TmE" firstAttribute="top" secondItem="VPW-Ll-s0W" secondAttribute="topMargin" id="Sxs-FY-ivq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Caw-Fw-TmE" secondAttribute="bottom" constant="0.5" id="X4J-FZ-uDf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="u0m-4T-57I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0h5-BK-lpe" firstAttribute="leading" secondItem="u0m-4T-57I" secondAttribute="leading" id="3ma-hF-YYa"/>
+                            <constraint firstItem="u0m-4T-57I" firstAttribute="bottom" secondItem="0h5-BK-lpe" secondAttribute="bottom" id="L25-6q-ksr"/>
+                            <constraint firstItem="u0m-4T-57I" firstAttribute="trailing" secondItem="0h5-BK-lpe" secondAttribute="trailing" id="hOS-lT-WT9"/>
+                            <constraint firstItem="0h5-BK-lpe" firstAttribute="top" secondItem="u0m-4T-57I" secondAttribute="top" id="xsy-Ta-g3V"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="ahh-58-Lxh">
                         <barButtonItem key="rightBarButtonItem" title="Buy" id="jbF-HS-8zN"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cartTableView" destination="0h5-BK-lpe" id="FQM-bI-MGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAm-ti-I8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
