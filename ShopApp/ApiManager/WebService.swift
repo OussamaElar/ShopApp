@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-let productStr = "https://fakestoreapi.com/products/"
+let productStr = "https://makeup-api.herokuapp.com/api/v1/products.json"
 
 struct WebService {
     static let shared = WebService()
@@ -16,6 +16,10 @@ struct WebService {
     private init() {}
     
     let cache = NSCache<NSString, UIImage>()
+    
+    var imageErrorData: Data {
+        UIImage(named: "imageError")!.pngData()!
+    }
     
     func getProducts(complection: @escaping ([Product]) -> Void) {
         guard let url = URL(string: productStr) else {
@@ -65,6 +69,8 @@ struct WebService {
        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 print("Image data error")
+                completion(self.imageErrorData)
+                self.cache.setObject(UIImage(data: self.imageErrorData)!, forKey: imageUrl as NSString)
                 return
             }
             
