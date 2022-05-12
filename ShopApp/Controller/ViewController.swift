@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     deinit {
         print("TV Deinit")
     }
-    
+    // 
     func getData() {
         WebService.shared.getProducts { products in
             self.products = products
