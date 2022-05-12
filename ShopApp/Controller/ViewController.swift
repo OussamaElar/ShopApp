@@ -92,6 +92,7 @@ extension ViewController {
     
     func passingData(product: Product) {
         productCartArr.append(product)
+        cartButton.image = UIImage(systemName: "cart.fill")
     }
 }
 
