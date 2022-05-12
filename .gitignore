@@ -50,11 +50,10 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
-<<<<<<< HEAD
+
 .DS_Store
 ShopApp.xcodeproj/xcuserdata/developer.xcuserdatad/xcdebugger/
-=======
->>>>>>> 6fb89079c9e1c9d958f9c1f33455b9cf3b907631
+
 
 # CocoaPods
 # We recommend against adding the Pods directory to your .gitignore. However
