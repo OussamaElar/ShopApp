@@ -45,6 +45,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cartButton" destination="EkN-8t-ifR" id="teU-Ji-WFk"/>
                         <outlet property="tableView" destination="VAs-AJ-C5z" id="aaB-BG-Vr4"/>
                     </connections>
                 </viewController>
