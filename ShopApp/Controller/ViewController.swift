@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         let nib = UINib(nibName: "ProductCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ProductCell")
         tableView.dataSource = self
+        tableView.delegate = self
         getData()
     }
     
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     
@@ -62,6 +63,25 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Row selected")
+        self.showAlert()
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
+    
+}
+extension ViewController {
+    func showAlert() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionAdd = UIAlertAction(title: "Add To Cart", style: .default, handler: nil)
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(actionAdd)
+        alert.addAction(actionCancel)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+            print("alert show")
+        }
+    }
 }
 
