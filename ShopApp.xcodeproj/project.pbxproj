@@ -14,6 +14,7 @@
 		8BBC40B7282C31C200A99389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC40B6282C31C200A99389 /* Assets.xcassets */; };
 		8BBC40BA282C31C200A99389 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC40B8282C31C200A99389 /* LaunchScreen.storyboard */; };
 		8BBC40C6282C369C00A99389 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC40C5282C369C00A99389 /* Model.swift */; };
+		8BEF1D11282D4F7900FC6F37 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF1D10282D4F7900FC6F37 /* Cart.swift */; };
 		8BFD78A8282C5BE800E56870 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD78A7282C5BE800E56870 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		8BBC40B9282C31C200A99389 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BBC40BB282C31C200A99389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BBC40C5282C369C00A99389 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8BEF1D10282D4F7900FC6F37 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		8BFD78A7282C5BE800E56870 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				8BBC40C2282C341F00A99389 /* Controller */,
 				8BBC40C1282C341500A99389 /* Model */,
 				8BBC40BB282C31C200A99389 /* Info.plist */,
+				8BEF1D10282D4F7900FC6F37 /* Cart.swift */,
 			);
 			path = ShopApp;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BBC40B2282C31C200A99389 /* ViewController.swift in Sources */,
+				8BEF1D11282D4F7900FC6F37 /* Cart.swift in Sources */,
 				8BBC40AE282C31C200A99389 /* AppDelegate.swift in Sources */,
 				8BBC40B0282C31C200A99389 /* SceneDelegate.swift in Sources */,
 				8BFD78A8282C5BE800E56870 /* WebService.swift in Sources */,
