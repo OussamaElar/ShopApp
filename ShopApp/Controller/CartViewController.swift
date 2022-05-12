@@ -8,6 +8,33 @@
 import UIKit
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cartProductArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell") as? CartCell else {
+            return UITableViewCell()
+        }
+        let product = cartProductArr[indexPath.row]
+        cell.configure(product: product)
+        return cell
+    }
+    
+    
+//    func cartTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        cartProductArr.count
+//    }
+//    
+//    
+//    func cartTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell") as? CartCell else {
+//            return UITableViewCell()
+//        }
+//        let product = cartProductArr[indexPath.row]
+//        cell.configure(product: product)
+//        return cell
+//    }
     
     @IBOutlet weak var cartTableView: UITableView!
     var cartProductArr: [Product] = [] {
@@ -18,19 +45,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
          }
     
-    func cartTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cartProductArr.count
-    }
-    
-    
-    func cartTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell") as? CartCell else {
-            return UITableViewCell()
-        }
-        let product = cartProductArr[indexPath.row]
-        cell.configure(product: product)
-        return cell
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         cartTableView.delegate = self
