@@ -8,7 +8,10 @@
 import UIKit
 
 class SavedProductCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var savedProductLabel: UILabel!
+    @IBOutlet weak var savedProductImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

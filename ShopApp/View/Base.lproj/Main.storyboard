@@ -56,18 +56,33 @@
         <!--My Products-->
         <scene sceneID="VTO-69-ehQ">
             <objects>
-                <viewController id="V5m-wG-UwT" sceneMemberID="viewController">
+                <viewController id="V5m-wG-UwT" customClass="SavedProductsViewController" customModule="ShopApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KEl-2F-Ydh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jvP-y3-Wa3">
+                                <rect key="frame" x="0.0" y="44" width="375" height="525"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hjH-NP-eNw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jvP-y3-Wa3" firstAttribute="leading" secondItem="hjH-NP-eNw" secondAttribute="leading" id="156-pk-JhS"/>
+                            <constraint firstItem="jvP-y3-Wa3" firstAttribute="top" secondItem="hjH-NP-eNw" secondAttribute="top" id="L27-Nb-C3i"/>
+                            <constraint firstItem="hjH-NP-eNw" firstAttribute="trailing" secondItem="jvP-y3-Wa3" secondAttribute="trailing" id="VkU-Kw-e7O"/>
+                            <constraint firstItem="hjH-NP-eNw" firstAttribute="bottom" secondItem="jvP-y3-Wa3" secondAttribute="bottom" id="z4x-lp-qv0"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Products" id="rJB-8j-ckc">
                         <barButtonItem key="rightBarButtonItem" image="xmark.circle" catalog="system" id="TSF-Xl-8Of"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="savedTableView" destination="jvP-y3-Wa3" id="NyI-Hu-ZzT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wId-ov-9ON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
