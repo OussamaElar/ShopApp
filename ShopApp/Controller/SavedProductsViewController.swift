@@ -7,17 +7,17 @@
 
 import UIKit
 
-class SavedProductsViewController: UIViewController {
-    
-    
-    var
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
+//class SavedProductsViewController: UIViewController {
+//
+//
+//    var
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        // Do any additional setup after loading the view.
+//    }
+//
 
     /*
     // MARK: - Navigation
@@ -29,4 +29,4 @@ class SavedProductsViewController: UIViewController {
     }
     */
 
-}
+//}

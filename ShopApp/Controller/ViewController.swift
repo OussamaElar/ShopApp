@@ -7,6 +7,7 @@
 
 import UIKit
 
+var productCartArr: [Product] = []
 class ViewController: UIViewController {
     
     
@@ -14,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var cartButton: UIBarButtonItem!
-    var productCartArr: [Product] = []
     var products: [Product] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -70,7 +70,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let product = products[indexPath.row]
         self.showAlert(product: product)
         tableView.deselectRow(at: indexPath, animated: true)
-        print(productCartArr.count)
+        print("Cart Total: \(productCartArr.count)")
     }
     
     
@@ -92,7 +92,9 @@ extension ViewController {
     
     func passingData(product: Product) {
         productCartArr.append(product)
+        print("item added to cart \n total items: \(productCartArr.count)")
         cartButton.image = UIImage(systemName: "cart.fill")
+        print(product.price!)
     }
 }
 
