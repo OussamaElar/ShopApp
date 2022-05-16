@@ -26,12 +26,14 @@ class ProductCell: UITableViewCell {
 //    }
     
     func configure(product: Product) {
-        price.text = "Price: " + "$\(product.price ?? "")"
+        price.text = "Price: " + "$\(product.price ?? " " )"
         price.layer.cornerRadius = 2
         price.layer.masksToBounds = true
         name.text = product.name
-        brand.text = "Brand: " + "\(product.brand ?? "")"
-        self.loadImage(imageUrl: product.imageUrl!)
+        brand.text = "Brand: " + "\(product.brand ?? " " )"
+        if let imageLink = product.imageUrl {
+            self.loadImage(imageUrl: imageLink)
+        }
     }
     
     func loadImage(imageUrl: String) {

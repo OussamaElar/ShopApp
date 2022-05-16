@@ -20,9 +20,11 @@ class CartCell: UITableViewCell {
     }
     
     func configure(product: Product) {
-        productPrice.text = "$\(product.price ?? "")"
+        productPrice.text = "$\(product.price ?? " ")"
         productName.text = product.name
-        self.loadImage(imageUrl: product.imageUrl!)
+        if let imageLink = product.imageUrl {
+            self.loadImage(imageUrl:imageLink)
+        }
     }
     
     func loadImage(imageUrl: String) {

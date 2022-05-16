@@ -11,14 +11,21 @@ class SavedProductsViewController: UIViewController {
     
     
     
+    
     @IBOutlet weak var savedTableView: UITableView!
-    var savedProducts: [Product] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.savedTableView.reloadData()
-            }
-        }
+    var savedProducts: [Product] = []
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.savedTableView.reloadData()
+//            }
+//        }
+    
+    
+    @IBAction func deleteAll(_ sender: UIBarButtonItem) {
+        self.savedProducts.removeAll()
+        savedTableView.reloadData()
     }
+    
 
 
     override func viewDidLoad() {
@@ -27,6 +34,7 @@ class SavedProductsViewController: UIViewController {
         savedTableView.register(nib, forCellReuseIdentifier: "SavedProductCell")
         savedTableView.delegate = self
         savedTableView.dataSource = self
+        savedTableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
@@ -47,7 +55,7 @@ extension SavedProductsViewController: UITableViewDataSource, UITableViewDelegat
         }
                 
         let product = savedProducts[indexPath.row]
-//        cell.configureSavedProduct(product: product)
+        cell.configureSavedProducts(product: product)
         return cell
     }
     
