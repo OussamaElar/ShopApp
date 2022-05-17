@@ -56,18 +56,37 @@
         <!--My Products-->
         <scene sceneID="VTO-69-ehQ">
             <objects>
-                <viewController id="V5m-wG-UwT" sceneMemberID="viewController">
+                <viewController id="V5m-wG-UwT" customClass="SavedProductsViewController" customModule="ShopApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KEl-2F-Ydh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jvP-y3-Wa3">
+                                <rect key="frame" x="0.0" y="44" width="375" height="525"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hjH-NP-eNw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jvP-y3-Wa3" firstAttribute="leading" secondItem="hjH-NP-eNw" secondAttribute="leading" id="156-pk-JhS"/>
+                            <constraint firstItem="jvP-y3-Wa3" firstAttribute="top" secondItem="hjH-NP-eNw" secondAttribute="top" id="L27-Nb-C3i"/>
+                            <constraint firstItem="hjH-NP-eNw" firstAttribute="trailing" secondItem="jvP-y3-Wa3" secondAttribute="trailing" id="VkU-Kw-e7O"/>
+                            <constraint firstItem="hjH-NP-eNw" firstAttribute="bottom" secondItem="jvP-y3-Wa3" secondAttribute="bottom" id="z4x-lp-qv0"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Products" id="rJB-8j-ckc">
-                        <barButtonItem key="rightBarButtonItem" image="xmark.circle" catalog="system" id="TSF-Xl-8Of"/>
+                        <barButtonItem key="rightBarButtonItem" image="xmark.circle" catalog="system" id="TSF-Xl-8Of">
+                            <connections>
+                                <action selector="deleteAll:" destination="V5m-wG-UwT" id="PIP-Jj-Nd3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="savedTableView" destination="jvP-y3-Wa3" id="NyI-Hu-ZzT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wId-ov-9ON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,9 +103,34 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0h5-BK-lpe">
                                 <rect key="frame" x="0.0" y="44" width="375" height="456"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dhB-Hd-akK">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhB-Hd-akK" id="VPW-Ll-s0W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Caw-Fw-TmE">
+                                                    <rect key="frame" x="36" y="11" width="303" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Caw-Fw-TmE" firstAttribute="leading" secondItem="VPW-Ll-s0W" secondAttribute="leadingMargin" constant="20" id="C9u-sr-s0L"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Caw-Fw-TmE" secondAttribute="trailing" constant="20" id="Jzz-7t-S6S"/>
+                                                <constraint firstItem="Caw-Fw-TmE" firstAttribute="top" secondItem="VPW-Ll-s0W" secondAttribute="topMargin" id="Sxs-FY-ivq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Caw-Fw-TmE" secondAttribute="bottom" constant="0.5" id="X4J-FZ-uDf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="456" id="Khi-fv-tL7"/>
                                 </constraints>
+
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-MZ-q6M">
                                 <rect key="frame" x="0.0" y="508" width="375" height="110"/>

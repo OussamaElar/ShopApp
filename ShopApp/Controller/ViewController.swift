@@ -74,6 +74,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? SavedProductsViewController
+        vc?.savedProducts.append(contentsOf: productCartArr)
+    }
+    
+    
 }
 extension ViewController {
     func showAlert(product: Product) {
@@ -97,4 +103,7 @@ extension ViewController {
         print(product.price!)
     }
 }
+
+
+
 

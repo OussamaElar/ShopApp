@@ -28,6 +28,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     // deleeting a cell
+    
+    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
@@ -73,6 +75,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.register(nib, forCellReuseIdentifier: "CartCell")
         totalCartValue()
         
+
 
         // Do any additional setup after loading the view.
     }
