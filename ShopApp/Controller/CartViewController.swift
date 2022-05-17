@@ -8,6 +8,13 @@
 import UIKit
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var priceTotal: UILabel!
+    @IBOutlet weak var cartTotal: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cartProductArr.count
     }
@@ -20,39 +27,57 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.configure(product: product)
         return cell
     }
+    // deleeting a cell
     
     
-//    func cartTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        cartProductArr.count
-//    }
-//    
-//    
-//    func cartTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell") as? CartCell else {
-//            return UITableViewCell()
-//        }
-//        let product = cartProductArr[indexPath.row]
-//        cell.configure(product: product)
-//        return cell
-//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cartProductArr.remove(at: indexPath.row)
+            deletedCartItem()
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
+    }
     
-    @IBOutlet weak var cartTableView: UITableView!
-    var cartProductArr: [Product] = [] {
+    var cartProductArr: [Product] = productCartArr {
             didSet {
                 DispatchQueue.main.async {
-                    self.cartTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
          }
+   public func totalCartValue() {
+        var cartPriceTotal: Double = 0
+        for (x,_) in productCartArr.enumerated() {
+            cartPriceTotal += Double(productCartArr[x].price!)!
+        }
+        priceTotal.text = "$\(cartPriceTotal)"
+    }
+    func deletedCartItem() -> Double{
+        var cartPriceTotal: Double = 0
+        for (x,_) in productCartArr.enumerated() {
+            cartPriceTotal = Double(priceTotal.text!)! - Double(productCartArr[x].price!)!
+        }
+        return cartPriceTotal
+//        priceTotal.text = "$\(cartPriceTotal)"
+    }
     
     override func viewDidLoad() {
+        let nib = UINib(nibName: "CartCell", bundle: nil)
         super.viewDidLoad()
-        cartTableView.delegate = self
-        cartTableView.dataSource = self
-       
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(nib, forCellReuseIdentifier: "CartCell")
+        totalCartValue()
+        
+
 
         // Do any additional setup after loading the view.
     }
-    
 
 }
