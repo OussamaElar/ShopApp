@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0h5-BK-lpe">
-                                <rect key="frame" x="0.0" y="44" width="375" height="456"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="515.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dhB-Hd-akK">
@@ -127,16 +127,12 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="456" id="Khi-fv-tL7"/>
-                                </constraints>
-
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-MZ-q6M">
-                                <rect key="frame" x="0.0" y="508" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYe-dt-Xqe">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="110"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart Total:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYe-dt-Xqe">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="187.5" id="aV1-2j-EDC"/>
                                         </constraints>
@@ -145,29 +141,36 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tif-xK-F9P">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="110"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87950878320000003" green="0.84873392820000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vwM-9S-7NK"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u0m-4T-57I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0h5-BK-lpe" firstAttribute="leading" secondItem="u0m-4T-57I" secondAttribute="leading" id="3ma-hF-YYa"/>
+                            <constraint firstItem="HYe-dt-Xqe" firstAttribute="firstBaseline" secondItem="0h5-BK-lpe" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="NRO-vN-VP7"/>
                             <constraint firstItem="zbl-MZ-q6M" firstAttribute="leading" secondItem="u0m-4T-57I" secondAttribute="leading" id="QCW-ga-yuN"/>
                             <constraint firstItem="u0m-4T-57I" firstAttribute="trailing" secondItem="zbl-MZ-q6M" secondAttribute="trailing" id="frR-IZ-ej4"/>
                             <constraint firstItem="u0m-4T-57I" firstAttribute="trailing" secondItem="0h5-BK-lpe" secondAttribute="trailing" id="hOS-lT-WT9"/>
-                            <constraint firstItem="zbl-MZ-q6M" firstAttribute="top" secondItem="0h5-BK-lpe" secondAttribute="bottom" constant="8" symbolic="YES" id="w3l-Nk-lzl"/>
                             <constraint firstItem="zbl-MZ-q6M" firstAttribute="bottom" secondItem="u0m-4T-57I" secondAttribute="bottom" id="xer-yg-59d"/>
                             <constraint firstItem="0h5-BK-lpe" firstAttribute="top" secondItem="u0m-4T-57I" secondAttribute="top" id="xsy-Ta-g3V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="ahh-58-Lxh">
-                        <barButtonItem key="rightBarButtonItem" title="Buy" id="jbF-HS-8zN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Buy" id="jbF-HS-8zN">
+                            <connections>
+                                <action selector="saveProducts:" destination="7EK-Ka-HIi" id="cax-TH-0cY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cartTotal" destination="HYe-dt-Xqe" id="cu5-3Q-MA3"/>

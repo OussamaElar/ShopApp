@@ -9,15 +9,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="299" id="KGk-i7-Jjw" customClass="SavedProductCell" customModule="ShopApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="SavedProductCell" customModule="ShopApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="95"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
+                <rect key="frame" x="0.0" y="0.0" width="383" height="95"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="47v-gC-FbC">
+                        <rect key="frame" x="13" y="10" width="150" height="75"/>
+                        <color key="backgroundColor" red="0.78823530669999997" green="0.86666667460000002" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="4Bh-5S-EL7"/>
+                            <constraint firstAttribute="height" constant="75" id="SWy-Uj-2kg"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTc-tb-IzM">
-                        <rect key="frame" x="20" y="27" width="283" height="21"/>
+                        <rect key="frame" x="285" y="37.5" width="42" height="20"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -28,25 +36,14 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="47v-gC-FbC">
-                        <rect key="frame" x="11.5" y="84" width="300" height="200"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="300" id="7sU-9S-vOW"/>
-                            <constraint firstAttribute="height" constant="200" id="nW1-IX-7fL"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="OTc-tb-IzM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="2DM-Z0-dwL"/>
-                    <constraint firstItem="OTc-tb-IzM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="CFh-Vq-dNn"/>
-                    <constraint firstItem="OTc-tb-IzM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="27" id="JjM-eG-ybP"/>
-                    <constraint firstItem="47v-gC-FbC" firstAttribute="top" secondItem="OTc-tb-IzM" secondAttribute="bottom" constant="36" id="O2z-8C-ga6"/>
-                    <constraint firstAttribute="trailing" secondItem="OTc-tb-IzM" secondAttribute="trailing" constant="20" id="OYq-wf-6MC"/>
-                    <constraint firstAttribute="trailing" secondItem="47v-gC-FbC" secondAttribute="trailing" constant="11.5" id="Zqd-aN-rdW"/>
-                    <constraint firstItem="47v-gC-FbC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11.5" id="cbb-ne-hkX"/>
-                    <constraint firstAttribute="bottom" secondItem="47v-gC-FbC" secondAttribute="bottom" constant="15" id="gFT-aK-gQ1"/>
-                    <constraint firstAttribute="trailing" secondItem="47v-gC-FbC" secondAttribute="trailing" constant="11.5" id="yYc-38-qHA"/>
-                    <constraint firstItem="47v-gC-FbC" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="zsg-rB-bb6"/>
+                    <constraint firstItem="OTc-tb-IzM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CpY-X0-5j9"/>
+                    <constraint firstItem="47v-gC-FbC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GNy-yp-CXM"/>
+                    <constraint firstItem="47v-gC-FbC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-7" id="cMe-TX-Ses"/>
+                    <constraint firstItem="47v-gC-FbC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fJC-6E-uwS"/>
+                    <constraint firstAttribute="trailing" secondItem="OTc-tb-IzM" secondAttribute="trailing" constant="56" id="hqN-tZ-J7B"/>
+                    <constraint firstAttribute="bottom" secondItem="47v-gC-FbC" secondAttribute="bottom" constant="10" id="prl-oW-bOm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -54,7 +51,7 @@
                 <outlet property="savedProductImg" destination="47v-gC-FbC" id="Hyc-MI-Gc7"/>
                 <outlet property="savedProductLabel" destination="OTc-tb-IzM" id="ngF-kp-flh"/>
             </connections>
-            <point key="canvasLocation" x="11.594202898550726" y="191.85267857142856"/>
+            <point key="canvasLocation" x="22.463768115942031" y="148.99553571428569"/>
         </tableViewCell>
     </objects>
 </document>
