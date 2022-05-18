@@ -25,7 +25,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTc-tb-IzM">
-                        <rect key="frame" x="285" y="37.5" width="42" height="20"/>
+                        <rect key="frame" x="253" y="37.5" width="110" height="20"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -38,11 +38,12 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="OTc-tb-IzM" firstAttribute="leading" secondItem="47v-gC-FbC" secondAttribute="trailing" constant="90" id="8sR-I2-Y43"/>
                     <constraint firstItem="OTc-tb-IzM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CpY-X0-5j9"/>
                     <constraint firstItem="47v-gC-FbC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GNy-yp-CXM"/>
                     <constraint firstItem="47v-gC-FbC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-7" id="cMe-TX-Ses"/>
                     <constraint firstItem="47v-gC-FbC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fJC-6E-uwS"/>
-                    <constraint firstAttribute="trailing" secondItem="OTc-tb-IzM" secondAttribute="trailing" constant="56" id="hqN-tZ-J7B"/>
+                    <constraint firstAttribute="trailing" secondItem="OTc-tb-IzM" secondAttribute="trailing" constant="20" id="hqN-tZ-J7B"/>
                     <constraint firstAttribute="bottom" secondItem="47v-gC-FbC" secondAttribute="bottom" constant="10" id="prl-oW-bOm"/>
                 </constraints>
             </tableViewCellContentView>
