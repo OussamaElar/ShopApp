@@ -34,9 +34,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             cartProductArr.remove(at: indexPath.row)
-            deletedCartItem()
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            deletedCartItem()
             
             tableView.endUpdates()
         }
@@ -56,13 +56,17 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         priceTotal.text = "$\(cartPriceTotal)"
     }
-    func deletedCartItem() -> Double{
+    func deletedCartItem() {
         var cartPriceTotal: Double = 0
-        for (x,_) in productCartArr.enumerated() {
-            cartPriceTotal = Double(priceTotal.text!)! - Double(productCartArr[x].price!)!
+        for product in cartProductArr {
+            cartPriceTotal = Double(product.price!)!
         }
-        return cartPriceTotal
-//        priceTotal.text = "$\(cartPriceTotal)"
+        for product in cartProductArr {
+            cartPriceTotal -= Double(product.price!)!
+        }
+        //        for (x,_) in productCartArr.enumerated() {
+        //            cartPriceTotal = Double(priceTotal.text!)! - Double(productCartArr[x].price!)!
+        priceTotal.text = "$\(cartPriceTotal)"
     }
     
     override func viewDidLoad() {
