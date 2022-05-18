@@ -54,6 +54,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
         return swipeConfig
     }
+
     
     func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completion -> Void in
@@ -64,6 +65,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.totalCartValue()
             self.tableView.reloadData()
             completion(true)
+            
         }
         return action
     }
@@ -93,21 +95,14 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-   public func totalCartValue() {
+   func totalCartValue() {
         var cartPriceTotal: Double = 0
         for (x,_) in cartProductArr.enumerated() {
             cartPriceTotal += Double(cartProductArr[x].price!)!
         }
         priceTotal.text = "$\(cartPriceTotal)"
     }
-    func deletedCartItem() -> Double{
-        var cartPriceTotal: Double = 0
-        for (x,_) in cartProductArr.enumerated() {
-            cartPriceTotal = Double(priceTotal.text!)! - Double(cartProductArr[x].price!)!
-        }
-        return cartPriceTotal
-//        priceTotal.text = "$\(cartPriceTotal)"
-    }
+    
     
     override func viewDidLoad() {
         let nib = UINib(nibName: "CartCell", bundle: nil)
