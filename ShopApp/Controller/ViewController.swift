@@ -7,7 +7,6 @@
 
 import UIKit
 
-var productCartArr: [Product] = []
 class ViewController: UIViewController {
     
     
@@ -15,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var cartButton: UIBarButtonItem!
+    var productCartArr: [Product] = []
+    var savedProducts: [Product] = []
     var products: [Product] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -32,6 +33,14 @@ class ViewController: UIViewController {
         getData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if productCartArr.isEmpty {
+            cartButton.image = UIImage(systemName: "cart")
+        } else {
+            cartButton.image = UIImage(systemName: "cart.fill")
+        }
+    }
+    
     deinit {
         print("TV Deinit")
     }
@@ -46,7 +55,26 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDataSource, UITableViewDelegate, UpdateCartArray, AddtoSaved, UpdateSavedArray {
+    
+    func deleteAllSavedProducts() {
+        self.savedProducts.removeAll()
+    }
+    
+    func deletAllCart() {
+        self.productCartArr.removeAll()
+    }
+    
+    
+    func saveProduct(arr: [Product]) {
+        self.savedProducts.append(contentsOf: arr)
+    }
+    
+    
+    func deletFromArray(index: Int) {
+        self.productCartArr.remove(at: index)
+    }
+    
     
     
     
@@ -75,8 +103,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as? SavedProductsViewController
-        vc?.savedProducts.append(contentsOf: productCartArr)
+        let vcSaved = segue.destination as? SavedProductsViewController
+        vcSaved?.savedProducts.append(contentsOf: savedProducts)
+        vcSaved?.delegate = self 
+        let vcCart = segue.destination as? CartViewController
+        vcCart?.cartProductArr.append(contentsOf: productCartArr)
+        vcCart?.delgate = self
+        vcCart?.savedProductDelegate = self
     }
     
     

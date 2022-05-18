@@ -8,10 +8,15 @@
 import UIKit
 
 
-class SavedProductsViewController: UIViewController {
+protocol UpdateSavedArray {
+    func deleteAllSavedProducts()
+}
+
+class SavedProductsViewController: UIViewController, AddtoSaved{
     
     
     
+    var delegate: UpdateSavedArray? = nil
     
     @IBOutlet weak var savedTableView: UITableView!
     var savedProducts: [Product] = []
@@ -21,9 +26,13 @@ class SavedProductsViewController: UIViewController {
 //            }
 //        }
     
+    func saveProduct(arr: [Product]) {
+        savedProducts.append(contentsOf: arr)
+    }
     
     @IBAction func deleteAll(_ sender: UIBarButtonItem) {
         self.savedProducts.removeAll()
+        self.delegate?.deleteAllSavedProducts()
         savedTableView.reloadData()
     }
     
@@ -38,6 +47,8 @@ class SavedProductsViewController: UIViewController {
         savedTableView.reloadData()
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
 
